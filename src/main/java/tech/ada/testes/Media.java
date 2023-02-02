@@ -1,7 +1,5 @@
 package tech.ada.testes;
 
-import java.util.Scanner;
-
 /**
  * Calcule a média aritmética de n valores a serem digitados.
  * <p>
@@ -33,13 +31,14 @@ public class Media {
             } else {
                 System.err.println("Valor digitado deve ser menor que 10.");
             }
-            valorEntrada = leitorTeclado.getNumero("Digite o valor da nota: ");;
+            valorEntrada = leitorTeclado.getNumero("Digite o valor da nota: ");
         }
 
         if (quantidade == 0) {
             throw new IllegalArgumentException("Nenhum valor digitado para fazer o cálculo de média.");
         } else {
-            System.out.printf("O resultado da média das %d provas é de %.2f", quantidade, media / quantidade);
+            media = media / quantidade;
+            System.out.printf("O resultado da média das %d provas é de %.2f", quantidade, media);
         }
         return media;
     }
